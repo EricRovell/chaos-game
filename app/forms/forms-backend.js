@@ -1,5 +1,5 @@
 import { render } from '../render/render.js';
-import { canvasSize as screen } from '../canvas.js';
+import { getScreenSize } from '../canvas.js';
 
 export const formsRead = (context, parameters) => {
   const forms = {
@@ -54,7 +54,8 @@ export const formsRead = (context, parameters) => {
   })
 
   forms.fit.addEventListener('click', () => {
-    parameters.scale = parameters.scaleFactor * Math.min(screen.width, screen.height);
+    const { width, height } = getScreenSize();
+    parameters.scale = parameters.scaleFactor * Math.min(width, height);
     render(context, parameters); 
   });
 

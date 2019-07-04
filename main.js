@@ -1,13 +1,13 @@
 import { parameters } from './app/chaos-game-parameters.js';
-import { canvasSize, canvas } from './app/canvas.js';
+import { makeCanvas, resize } from './app/canvas.js';
 import { render } from './app/render/render.js';
 import { formsRead } from './app/forms/forms-backend.js';
 
-const context = canvas();
+const { canvas, context } = makeCanvas();
 render(context, parameters);
 
 window.addEventListener('resize', () => {
-  parameters.scale = parameters.scaleFactor * Math.min(canvasSize.width, canvasSize.height);
+  resize(context, canvas, parameters);
   render(context, parameters);
 });
 

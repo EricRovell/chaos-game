@@ -1,4 +1,6 @@
-import { canvasSize as screen } from './canvas.js';
+import { getScreenSize } from './canvas.js';
+
+let screen = getScreenSize();
 
 const parameters = {
 
