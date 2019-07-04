@@ -1,4 +1,4 @@
-export function renderFigure(context, vertices, {visibility, vertexSize}) {
+export function renderFigure(context, {vertices, visibility, vertexSize}) {
   if (visibility.sides) {
     context.strokeStyle = visibility.sideColour;
     context.lineWidth = visibility.sideWidth;
