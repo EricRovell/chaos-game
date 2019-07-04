@@ -1,0 +1,103 @@
+/* container UI */
+
+body {
+  background: var(--background-color);
+}
+
+.container-app {
+  display: grid;
+  grid-template-areas: 
+    'options canvas';
+  grid-template-columns: 3fr 9fr;
+
+  width: 100vw;
+  height: 100vh;
+}
+
+.container-options {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+
+  grid-area: options;
+  height: 93vh;
+  margin: 20px 10px 20px 10px;
+  border: 1px solid white;
+}
+
+.container-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  color: white;
+  font-size: 1.6rem;
+  padding: 15px 15px;
+  overflow: hidden;
+}
+
+/* OPTIONS */
+
+.group-options {
+  margin: 5px;
+  overflow: hidden;
+  max-height: 3rem;
+  background-color: #081B33;
+  transition: all 1.5s ease;
+  overflow: hidden;
+  border-bottom: 1px solid white;
+}
+
+#collapse-all {
+  position: relative;
+}
+
+.collapse-icon {
+  max-height: 3rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform:
+    rotate(-90deg)
+    scale(0.75);
+}
+
+.toggle-options {
+  font-size: 2rem;
+  color: white;
+  padding: 15px;
+  line-height: 2.5rem;
+  height: 15rem;
+  color: white;
+  text-decoration: none;
+  padding: 10px 10px;
+}
+
+.container-options .group-options:target {
+  max-height: 25rem;
+  background-color: #152642;
+}
+
+.container-options .group-options:target .group-title {
+  background-color: #081B33;
+}
+
+.collapsed {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* CANVAS */
+
+.canvas-window {
+  height: 93vh;
+  grid-area: canvas;
+  border: 1px solid white;
+  margin: 20px 10px 20px 10px;
+}
+
+#canvas {
+  width: 100%;
+  height: 100%;
+}

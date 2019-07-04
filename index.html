@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="./styles/style.css">
+  <title>Chaos Game</title>
+</head>
+
+<body>
+
+  <div class="container-app">
+
+    <div class="container-options">
+      <ul>
+
+        <li class="group-options" id="collapse-all">
+          <a href="#collapse-options" class="toggle-options">
+            <img src="./media/collapse-options.svg" class="collapse-icon">
+          </a>
+        </li>
+
+        <li class="group-options" id="polygon-options">
+          <div class="group-title"><a href="#polygon-options" class="toggle-options">Polygon</a></div>
+          <div class="collapsed">
+            <div class="container-form">
+              <label for="polygon">type:</label>
+              <input id="polygon" type="number" min="3" placeholder="Number of polygon's sides...">
+            </div>
+            <div class="container-form">
+              <label for="visibility">visibility:</label>
+              <p>vertices:<input id="visibility-vertices" type="checkbox" checked></p>
+              <p>sides:<input id="visibility-sides" type="checkbox" checked></p>
+            </div>
+            <div class="container-form">
+              <label for="scale">rotate:</label>
+              <p>vertices:<input id="scale-option" type="number" placeholder="Turn around ... (degrees)"></p>
+            </div>
+            <div class="container-form">
+              <label for="fit-option">fit into window</label>
+              <p><input id="fit-option" type="checkbox" checked></p>
+            </div>
+          </div>  
+        </li>
+
+        <li class="group-options" id="dot-options">
+          <div class="group-title"><a href="#dot-options" class="toggle-options">Dots</a></div>
+          <div class="collapsed">
+            <div class="container-form">
+              <label for="dots">quantity:</label>
+              <input id="dots" type="number" min="0" placeholder="Number of dots...">
+            </div>
+          </div>
+        </li>
+
+        <li class="group-options" id="chaos-options">
+          <div class="group-title"><a href="#chaos-options" class="toggle-options">Chaos</a></div>
+          <div class="collapsed">
+            <div class="container-form">
+              <label for="restricted">restricted mode:</label>
+              <input id="restricted" type="checkbox" checked>
+            </div>
+            <div class="container-form">
+              <label for="dots">previous:</label>
+              <input id="memory-previous" type="text" placeholder="Allowed steps...">
+            </div>
+            <div class="container-form">
+              <label for="dots">penultimate:</label>
+              <input id="memory-penultimate" type="text" placeholder="Allowed steps...">
+            </div>
+          </div>
+        </li>
+
+        
+
+      </ul>
+    </div>
+
+    <div class="canvas-window">
+      <canvas id="canvas"></canvas>
+    </div>
+
+  </div>
+  
+  <script src="./main.js" type="module"></script>
+</body>
+
+</html>
