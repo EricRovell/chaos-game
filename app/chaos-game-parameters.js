@@ -29,8 +29,8 @@ const parameters = {
     sideWidth: 3,
   },
   vertexSize: 7,                    // --self-explanatory--
-  scaleFactor: 0.45,
-  scale: 0.45 * Math.min(screen.width, screen.height),    // scaling factor
+  scaleFactor: 0.47,
+  scale: 0.47 * Math.min(screen.width, screen.height),    // scaling factor
 
   // rendering points
   position: { x: 0, y: 0 },   // starting position

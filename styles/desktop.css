@@ -75,7 +75,7 @@ body {
 }
 
 .container-options .group-options:target {
-  max-height: 25rem;
+  max-height: 45rem;
   background-color: #152642;
 }
 
@@ -83,9 +83,38 @@ body {
   background-color: #081B33;
 }
 
+/* Collapsed options */
+
 .collapsed {
   display: flex;
-  flex-wrap: wrap;
+  flex-flow: column wrap;
+}
+
+.container-form {
+  margin: 0;
+  padding: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.container-form input {
+  border-radius: 5px;
+  padding-left: 5px;
+  width: 100%;
+}
+
+.container-form label {
+  color: #D3D3D3;
+}
+
+.visibility-options {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+input[type="checkbox"] {
+  width: 30px;
+  height: 15px;
 }
 
 /* CANVAS */

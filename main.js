@@ -7,7 +7,7 @@ const context = canvas();
 render(context, parameters);
 
 window.addEventListener('resize', () => {
-  parameters.scale = 0.45 * Math.min(canvasSize.width, canvasSize.height);
+  parameters.scale = parameters.scaleFactor * Math.min(canvasSize.width, canvasSize.height);
   render(context, parameters);
 });
 
