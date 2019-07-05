@@ -124,6 +124,7 @@ input[type="checkbox"] {
   grid-area: canvas;
   border: 1px solid white;
   margin: 20px 10px 20px 10px;
+  background-color: var(--canvas-background-color);
 }
 
 #canvas {
