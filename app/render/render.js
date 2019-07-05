@@ -7,7 +7,7 @@ export function render(context, parameters) {
 
   // -> used to fill the canvas bg
   // context.fillStyle = '#081B33';
-  // context.fillRect(-screen.width / 2, -screen.height / 2, screen.width, screen.height);
+  context.clearRect(-screen.width / 2, -screen.height / 2, screen.width, screen.height);
   
   parameters.vertices = parameters.verticesCoordinates();
   renderFigure(context, parameters);
