@@ -22,7 +22,7 @@ const parameters = {
   },                                 // origin position
   vertices: null,
   theta: -Math.PI /2,                // rotation  
-  polygon: 3,                        // type
+  polygon: 6,                        // type
   visibility : {
     vertices: true,
     vertexColour: "white",
@@ -47,9 +47,12 @@ const parameters = {
 
   // chaos parameters
   stepFactor: 0.5,            // step distance factor towards a vertice
-  restricted: true,            // step allowance mode
+  restricted: {
+    '-1': true,
+    '-2': true
+  },            // step allowance mode
   steps: {                   // how many vertices ahead can be OR can't be the next move
-    '-1': [1, 4, 5],               //    -> previous vertex
+    '-1': [],               //    -> previous vertex
     '-2': []                //    -> penultimate vertex
   },
 

@@ -96,12 +96,6 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-.container-form input {
-  border-radius: 5px;
-  padding-left: 5px;
-  width: 100%;
-}
-
 .container-form label {
   color: #D3D3D3;
 }
@@ -115,6 +109,24 @@ body {
 input[type="checkbox"] {
   width: 30px;
   height: 15px;
+}
+
+input[type="text"],
+input[type="number"] {
+  border-radius: 5px;
+  padding-left: 5px;
+  width: 100%;
+}
+
+.restricted {
+  position: relative;
+  width: 100%;
+}
+
+.restricted-mode {
+  position: absolute;
+  right: 0.05rem;
+  top: 0.5rem;
 }
 
 /* CANVAS */

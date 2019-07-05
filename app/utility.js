@@ -9,10 +9,22 @@ export const midPoint = (position, vertex, stepFactor) => {
 
 export const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
 
-export const stepCheck = (vertices, steps, previous, {history}) => {
-  if (!steps.length) { return true; }
-  if (parameters.restricted) {
-    return steps.some(step => {
+export const stepCheck = (backward, {vertices, steps, history, restricted}) => {
+  if (!steps[backward].length) { return true; }
+
+  /* const check = () => {
+    return steps[backward].some(step => {
+      if (history[0] > previous) {
+        return (history[0] - previous != step)
+      } else {
+        return (vertices.length - previous + history[0] != step);
+      }
+    }); 
+  }; */
+
+  const previous = history[backward]
+  if (restricted[backward]) {
+    return steps[backward].some(step => {
       if (history[0] > previous) {
         return (history[0] - previous != step)
       } else {
@@ -20,7 +32,7 @@ export const stepCheck = (vertices, steps, previous, {history}) => {
       }
     }); 
   } else {
-    return steps.some(step => {
+    return steps[backward].some(step => {
       if (history[0] > previous) {
         return (history[0] - previous == step)
       } else {

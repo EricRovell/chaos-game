@@ -12,10 +12,13 @@ export const formsRead = (context, parameters) => {
     theta: document.getElementById('scale-option'),
     fit: document.getElementById('fit-option'),
 
-    restricted: document.getElementById('restricted'),
+    restricted: {
+      '-1': document.querySelectorAll('.restricted-mode')[0],
+      '-2': document.querySelectorAll('.restricted-mode')[1]
+    },
     steps: {
-      '-1': document.getElementById('memory-previous'),
-      '-2': document.getElementById('memory-penultimate'),
+      '-1': document.getElementById('previous-vertices'),
+      '-2': document.getElementById('penultimate-vertices'),
     },
   };
     
@@ -59,19 +62,21 @@ export const formsRead = (context, parameters) => {
     render(context, parameters); 
   });
 
-  forms.restricted.addEventListener('click', () => {
-    if (forms.restricted.checked) {
-      parameters.restricted = true;
-    } else {
-      parameters.restricted = false;
-    }
-    render(context, parameters);
-  });
+  for (let restrict in forms.restricted) {
+    forms.restricted[restrict].addEventListener('input', () => {
+      if (forms.restricted[restrict].checked) {
+        parameters.restricted[restrict] = true;
+      } else {
+        parameters.restricted[restrict] = false;
+      }
+      render(context, parameters);
+    });    
+  }
 
   for (let step in forms.steps) {
     forms.steps[step].addEventListener('input', () => {
       let vertices = forms.steps[step].value;
-      vertices = vertices.split(' ').map(Number);
+      vertices = vertices.trim().split(',').map(Number);
       parameters.steps[step] = vertices;
       render(context, parameters);
     });

@@ -40,7 +40,7 @@
             </div>
             <div class="container-form">
               <label for="scale">rotate:</label>
-              <p><input id="scale-option" type="number" placeholder="Turn around ... (degrees)"></p>
+              <input id="scale-option" type="number" placeholder="Turn around ... (degrees)">
             </div>
             <div class="container-form">
               <label for="fit-option">fit into window</label>
@@ -62,7 +62,7 @@
         <li class="group-options" id="chaos-options">
           <div class="group-title"><a href="#chaos-options" class="toggle-options">Chaos</a></div>
           <div class="collapsed">
-            <div class="container-form">
+            <!-- <div class="container-form">
               <label for="restricted">restricted mode:</label>
               <input id="restricted" type="checkbox" checked>
             </div>
@@ -73,7 +73,20 @@
             <div class="container-form">
               <label for="dots">penultimate:</label>
               <input id="memory-penultimate" type="text" placeholder="Allowed steps...">
+            </div> -->
+            <div class="container-form">
+              <label for="previous-vertices">previous:</label>
+              <div class="restricted">
+                <input id="previous-vertices" type="text" placeholder="# of vertices...">
+                <input class="restricted-mode" type="checkbox" checked>
+              </div>
+              <label for="penultimate-vertices">penultimate:</label>
+              <div class="restricted">
+                <input id="penultimate-vertices" type="text" placeholder="# of vertices...">
+                <input class="restricted-mode" type="checkbox" checked>
+              </div>             
             </div>
+            
           </div>
         </li>
 
