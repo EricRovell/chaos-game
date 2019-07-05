@@ -1,5 +1,5 @@
 import { randomInt, midPoint, stepCheck } from '../utility.js';
-import { parameters } from '../chaos-game-parameters.js';
+import { parameters } from '../parameters.js';
 
 export function renderChaos(context, {vertices, points, position, dotSize, stepFactor, history, steps}) {
   

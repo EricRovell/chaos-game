@@ -1,4 +1,4 @@
-import { parameters } from './app/chaos-game-parameters.js';
+import { parameters } from './app/parameters.js';
 import { makeCanvas, resize } from './app/canvas.js';
 import { render } from './app/render/render.js';
 import { formsRead } from './app/forms/forms-backend.js';

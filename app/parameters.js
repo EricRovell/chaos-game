@@ -22,7 +22,7 @@ const parameters = {
   },                                 // origin position
   vertices: null,
   theta: -Math.PI /2,                // rotation  
-  polygon: 5,                        // type
+  polygon: 3,                        // type
   visibility : {
     vertices: true,
     vertexColour: "white",

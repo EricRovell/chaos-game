@@ -1,4 +1,4 @@
-import { parameters } from './chaos-game-parameters.js';
+import { parameters } from './parameters.js';
 
 export const midPoint = (position, vertex, stepFactor) => {
   return {
