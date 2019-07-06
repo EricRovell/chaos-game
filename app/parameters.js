@@ -25,9 +25,7 @@ const parameters = {
   polygon: 6,                        // type
   visibility : {
     vertices: true,
-    vertexColour: "white",
     sides: true,
-    sideColour: "white",
     sideWidth: 3,
   },
   vertexSize: 7,                    // --self-explanatory--
@@ -40,9 +38,16 @@ const parameters = {
   paintSpeed: 25,             // how many points are rendered at once
   points: 30000,               // how much points to render 
   dotSize: 1,
-  dotColours: {               // colors specified towards each polygon's vertice
-    default: 'rgba(255, 0, 255, 200)',
-    1: 'rgba(100, 200, 255, 150)',
+
+  // colours
+  colours: {
+    vertices: "white",
+    sides: "white",
+    dots: "white",
+    /* dots: {
+      default: 'rgba(255, 0, 255, 200)',
+      1: 'rgba(100, 200, 255, 150)',
+    } */
   },
 
   // chaos parameters

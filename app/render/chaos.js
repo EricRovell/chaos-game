@@ -1,9 +1,9 @@
 import { randomInt, midPoint, stepCheck } from '../utility.js';
 import { parameters } from '../parameters.js';
 
-export function renderChaos(context, {vertices, points, position, dotSize, stepFactor, history, steps}) {
+export function renderChaos(context, {vertices, points, position, dotSize, stepFactor, history, colours}) {
   
-  context.fillStyle = 'white';
+  context.fillStyle = colours.dots;
   let current = position;
 
   for (let point = 0; point < points; point++) {

@@ -1,6 +1,6 @@
-export function renderFigure(context, {vertices, visibility, vertexSize}) {
+export function renderFigure(context, {vertices, visibility, vertexSize, colours}) {
   if (visibility.sides) {
-    context.strokeStyle = visibility.sideColour;
+    context.strokeStyle = colours.sides;
     context.lineWidth = visibility.sideWidth;
     context.beginPath();
     context.moveTo(vertices[vertices.length - 1].x, vertices[vertices.length - 1].y)
@@ -11,7 +11,7 @@ export function renderFigure(context, {vertices, visibility, vertexSize}) {
   }
 
   if (visibility.vertices) {
-    context.fillStyle = visibility.vertexColour;
+    context.fillStyle = colours.vertices;
     for (let vertice of vertices) {
       context.beginPath();
       context.arc(vertice.x, vertice.y, vertexSize, 0, 2 * Math.PI);

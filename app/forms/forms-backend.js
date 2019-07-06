@@ -1,28 +1,9 @@
 import { render } from '../render/render.js';
 import { getScreenSize } from '../canvas.js';
+import { forms } from './forms.js';
 
 export const formsRead = (context, parameters) => {
-  const forms = {
-    polygon: document.getElementById('polygon'),
-    dots: document.getElementById('dots'),
-    visibility: {
-      vertices: document.getElementById('visibility-vertices'),
-      sides: document.getElementById('visibility-sides')
-    },
-    theta: document.getElementById('scale-option'),
-    fit: document.getElementById('fit-option'),
-
-    restricted: {
-      '-1': document.querySelectorAll('.restricted-mode')[0],
-      '-2': document.querySelectorAll('.restricted-mode')[1]
-    },
-    steps: {
-      '-1': document.getElementById('previous-vertices'),
-      '-2': document.getElementById('penultimate-vertices'),
-    },
-  };
-    
-
+  
   forms.polygon.addEventListener('input', () => {
     parameters.polygon = parseInt(polygon.value, 10);
     render(context, parameters);
@@ -81,4 +62,12 @@ export const formsRead = (context, parameters) => {
       render(context, parameters);
     });
   }
+
+  for (let object in forms.colours) {
+    forms.colours[object].addEventListener('input', () => {
+      parameters.colours[object] = forms.colours[object].value;
+      render(context, parameters);
+    });
+  }
+
 }
