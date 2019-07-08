@@ -12,6 +12,8 @@ export const canvasWheelZoom = (context, parameters) => {
     // restrict scale
     scale.present = Math.min(Math.max(scale.min, scale.present), scale.max);
     // apply scale transformation
+
+    parameters.scale.present = scale.present;
     
     context.setTransform(scale.present, 0, 0, scale.present, screen.width / 2, screen.height / 2);
     render(context, parameters)
