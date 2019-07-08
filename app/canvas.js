@@ -18,7 +18,7 @@ export const resize = (context, canvas, parameters) => {
   [canvas.width, canvas.height] = [width, height];
   context.translate(width / 2, height / 2);
   // correct the render's scale
-  parameters.scale = parameters.scaleFactor * Math.min(width, height);
+  parameters.scale.initial = parameters.scale.fit * Math.min(width, height);
 };
 
 export function makeCanvas() {

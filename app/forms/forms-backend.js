@@ -39,7 +39,7 @@ export const formsRead = (context, parameters) => {
 
   forms.fit.addEventListener('click', () => {
     const { width, height } = getScreenSize();
-    parameters.scale = parameters.scaleFactor * Math.min(width, height);
+    parameters.scale.initial = parameters.scale.fit * Math.min(width, height);
     render(context, parameters); 
   });
 

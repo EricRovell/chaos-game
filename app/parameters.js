@@ -5,16 +5,15 @@ let screen = getScreenSize();
 const parameters = {
 
   // canvas window
-  sscale: {
+  scale: {
     // fit
     fit: 0.47,
     initial: 0.47 * Math.min(screen.width, screen.height),
     // zoom
-    min: 0.5,
+    min: 0.25,
     present: 1,
     max: 2
-  },
-  
+  },  
 
   // polygon
   origin: { 
@@ -30,9 +29,7 @@ const parameters = {
     sideWidth: 3,
   },
   vertexSize: 7,                    // --self-explanatory--
-  scaleFactor: 0.47,
-  scale: 0.47 * Math.min(screen.width, screen.height),    // scaling factor
-
+  
   // rendering points
   position: { x: 0, y: 0 },   // starting position
   pointSize: 1,               // size of the point
@@ -74,8 +71,8 @@ const parameters = {
     const vertices = new Array;
     for (let i = 0; i < this.polygon; i++) {
       vertices.push({
-        x: this.scale * Math.cos(this.theta + 2 * Math.PI * i / this.polygon),
-        y: this.scale * Math.sin(this.theta + 2 * Math.PI * i / this.polygon),
+        x: this.scale.initial * Math.cos(this.theta + 2 * Math.PI * i / this.polygon),
+        y: this.scale.initial * Math.sin(this.theta + 2 * Math.PI * i / this.polygon),
       });
     }
     return vertices;

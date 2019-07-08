@@ -2,11 +2,7 @@ import { render } from "../render/render.js";
 import { getScreenSize } from '../canvas.js';
 
 export const canvasWheelZoom = (context, parameters) => {
-  const scale = {
-    min: 0.5,
-    present: 1,
-    max: 2
-  }
+  const { scale } = parameters;
   const canvas = document.getElementById('canvas');
 
   canvas.addEventListener('wheel', event => {
