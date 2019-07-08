@@ -36,7 +36,7 @@ const parameters = {
   position: { x: 0, y: 0 },   // starting position
   pointSize: 1,               // size of the point
   paintSpeed: 25,             // how many points are rendered at once
-  points: 30000,               // how much points to render 
+  points: 10000,               // how much points to render 
   dotSize: 1,
 
   // colours

@@ -1,4 +1,7 @@
-export const canvasWheelZoom = () => {
+import { render } from "../render/render.js";
+import { getScreenSize } from '../canvas.js';
+
+export const canvasWheelZoom = (context, parameters) => {
   const scale = {
     min: 0.5,
     present: 1,
@@ -7,11 +10,14 @@ export const canvasWheelZoom = () => {
   const canvas = document.getElementById('canvas');
 
   canvas.addEventListener('wheel', event => {
+    let screen = getScreenSize();
     event.preventDefault();
     scale.present += event.deltaY * (-0.0008);
     // restrict scale
     scale.present = Math.min(Math.max(scale.min, scale.present), scale.max);
     // apply scale transformation
-    canvas.style.transform = `scale(${scale.present})`;
+    
+    context.setTransform(scale.present, 0, 0, scale.present, screen.width / 2, screen.height / 2);
+    render(context, parameters)
   });  
 };

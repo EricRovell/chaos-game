@@ -7,7 +7,7 @@ import { canvasWheelZoom } from './app/canvas/zoom.js';
 const { canvas, context } = makeCanvas();
 render(context, parameters);
 
-canvasWheelZoom();
+canvasWheelZoom(context, parameters);
 
 window.addEventListener('resize', () => {
   resize(context, canvas, parameters);
