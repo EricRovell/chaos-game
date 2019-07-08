@@ -4,16 +4,17 @@ let screen = getScreenSize();
 
 const parameters = {
 
-  verticesCoordinates: function() {
-    const vertices = new Array;
-    for (let i = 0; i < this.polygon; i++) {
-      vertices.push({
-        x: this.scale * Math.cos(this.theta + 2 * Math.PI * i / this.polygon),
-        y: this.scale * Math.sin(this.theta + 2 * Math.PI * i / this.polygon),
-      });
-    }
-    return vertices;
+  // canvas window
+  sscale: {
+    // fit
+    fit: 0.47,
+    initial: 0.47 * Math.min(screen.width, screen.height),
+    // zoom
+    min: 0.5,
+    present: 1,
+    max: 2
   },
+  
 
   // polygon
   origin: { 
@@ -66,6 +67,18 @@ const parameters = {
     '0': 1,                  // -> present vertex
     '-1': 1,                 // -> previous vertex
     '-2': 1                  // -> penultimate vertex
+  },
+
+  // re/calculate polygon's coordinates as needed
+  verticesCoordinates: function() {
+    const vertices = new Array;
+    for (let i = 0; i < this.polygon; i++) {
+      vertices.push({
+        x: this.scale * Math.cos(this.theta + 2 * Math.PI * i / this.polygon),
+        y: this.scale * Math.sin(this.theta + 2 * Math.PI * i / this.polygon),
+      });
+    }
+    return vertices;
   },
 }
 
